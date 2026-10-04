@@ -1,6 +1,6 @@
 # 4 Palabras Bíblicas ✝️
 
-Juego web al estilo "4 imágenes, 1 palabra" con temática cristiana y bíblica. Se muestran 4 imágenes y hay que adivinar la palabra que las une.
+Juego web de adivinanzas con temática cristiana y bíblica. Se muestran 4 imágenes y hay que adivinar la palabra que las une.
 
 🎮 **Juégalo en línea:** https://4fotos1palabrabiblica.parravergara.com/
 
