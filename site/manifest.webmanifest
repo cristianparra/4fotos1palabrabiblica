@@ -1,0 +1,19 @@
+{
+  "id": "/",
+  "name": "4 Palabras Bíblicas",
+  "short_name": "4 Palabras",
+  "description": "Adivina la palabra bíblica que une las 4 imágenes. Por libros de la Biblia, con tres dificultades.",
+  "lang": "es",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1f2a44",
+  "theme_color": "#1f2a44",
+  "categories": ["games", "education"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -132,3 +132,5 @@ h1 { font-size: 1.1rem; margin: 0; color: var(--gold); text-align: center; }
 .foot a.gh:hover, .foot a.gh:focus-visible { background: var(--gold); color: var(--bg); }
 .foot a.gh svg { width: 18px; height: 18px; fill: currentColor; }
 .foot .credit { font-size: .75rem; color: var(--text); opacity: .6; }
+
+.foot .credit a, .foot .credit a:link, .foot .credit a:visited { color: var(--gold); }
