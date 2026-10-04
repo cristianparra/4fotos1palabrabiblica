@@ -50,8 +50,12 @@ Cada nivel está en `site/puzzles.js`:
 - `books`: libros a los que pertenece (vacío = solo modo general).
 - `clues`: 4 pistas `[título de un artículo de Wikipedia en español, emoji de respaldo]`. La imagen principal del artículo es la que se muestra.
 
+## Licencia
+
+El código está bajo licencia [MIT](LICENSE): puedes hacer un fork, modificarlo y usarlo libremente, incluso para tu propia iglesia o comunidad.
+
 ## Créditos
 
-Imágenes de Wikipedia / Wikimedia Commons, cada una con su propia licencia.
+Imágenes de Wikipedia / Wikimedia Commons, cada una con su propia licencia. La librería PptxGenJS incluida en `site/vendor/` tiene su propia licencia MIT.
 
 Hecho con ❤️ en Cristo ✝️, un montón de líneas de código y un poquito de café ☕
