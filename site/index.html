@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4 Palabras Bíblicas</title>
+  <meta name="description" content="Adivina la palabra bíblica que une las 4 imágenes.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝️</text></svg>">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="badge">Nivel <b id="level">1</b></div>
+      <h1>4 Palabras Bíblicas</h1>
+      <div class="badge">🪙 <b id="coins">0</b></div>
+    </header>
+
+    <p id="mode" class="mode"></p>
+    <p class="sub">¿Qué palabra une estas 4 imágenes?</p>
+
+    <section id="images" class="images" aria-label="Imágenes"></section>
+
+    <section id="slots" class="slots" aria-label="Tu respuesta"></section>
+    <section id="pool" class="pool" aria-label="Letras disponibles"></section>
+
+    <div class="actions">
+      <button id="hint" class="btn">💡 Pista <small>(<span id="hint-cost">5</span>🪙)</small></button>
+      <button id="skip" class="btn">⏭️ Saltar</button>
+      <button id="menu-btn" class="btn">🏠 Modos</button>
+    </div>
+
+    <p id="msg" class="msg" aria-live="polite"></p>
+  </main>
+
+  <div id="overlay" class="overlay" hidden>
+    <div class="modal">
+      <h2 id="ov-title">¡Correcto!</h2>
+      <p id="ov-word" class="ov-word"></p>
+      <p id="ov-text"></p>
+      <button id="ov-btn" class="btn primary">Siguiente</button>
+    </div>
+  </div>
+
+  <div id="menu" class="overlay" hidden>
+    <div class="modal menu">
+      <button id="menu-back" class="btn wide" hidden>↩️ Volver al juego</button>
+      <h2>¿Cómo quieres jugar?</h2>
+      <div class="testament">Dificultad</div>
+      <div id="difficulty" class="chips diff"></div>
+      <p id="diff-info" class="diff-info"></p>
+      <button id="mode-general" class="btn primary wide">🌍 Modo general <small id="general-count"></small></button>
+      <p class="or">o elige uno o más libros</p>
+      <div id="books"></div>
+      <p id="books-info" class="books-info"></p>
+      <button id="mode-books" class="btn primary wide" disabled>📚 Jugar con los libros elegidos</button>
+
+      <div class="ppt-box">
+        <p class="or">o descarga una presentación de PowerPoint con esta configuración</p>
+        <div class="ppt-row">
+          <label>Preguntas
+            <select id="ppt-count">
+              <option value="5">5</option><option value="10" selected>10</option>
+              <option value="15">15</option><option value="20">20</option><option value="0">Todas</option>
+            </select>
+          </label>
+          <label>Respuestas
+            <select id="ppt-answers">
+              <option value="end">Al final</option><option value="each">Tras cada pregunta</option>
+            </select>
+          </label>
+        </div>
+        <button id="ppt-general" class="btn wide">📥 Descargar PPT · modo general</button>
+        <button id="ppt-books" class="btn wide" disabled>📥 Descargar PPT · libros elegidos</button>
+        <p id="ppt-status" class="books-info" aria-live="polite"></p>
+      </div>
+
+      <button id="reset-all" class="btn wide danger">🗑️ Cerrar partida y empezar de cero</button>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <p class="made">
+      Hecho con <span class="em heart" aria-label="amor">❤️</span> en Cristo <span class="em" aria-label="cruz">✝️</span>,
+      un montón de líneas de código y un poquito de café <span class="em" aria-label="café">☕</span>
+    </p>
+    <a class="gh" href="https://github.com/cristianparra" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+      github.com/cristianparra
+    </a>
+    <p class="credit">Imágenes de Wikipedia / Wikimedia Commons · Tu progreso se guarda solo en este navegador</p>
+  </footer>
+
+  <script src="vendor/pptxgen.bundle.js?v=3"></script>
+  <script src="ppt.js?v=3"></script>
+  <script src="puzzles.js?v=3"></script>
+  <script src="game.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+:root {
+  --bg: #1f2a44;
+  --card: #2b3a5c;
+  --gold: #f5c542;
+  --text: #f4f1e8;
+  --ok: #3ecf8e;
+  --bad: #ef5b5b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #34466f, var(--bg));
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app { width: 100%; max-width: 480px; padding: 12px 16px; flex: 1; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+h1 { font-size: 1.1rem; margin: 0; color: var(--gold); text-align: center; }
+.badge { background: var(--card); padding: 6px 12px; border-radius: 20px; font-size: .9rem; white-space: nowrap; }
+.sub { text-align: center; margin: 10px 0; opacity: .8; }
+
+.images { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.img {
+  aspect-ratio: 1; background: var(--card); border-radius: 12px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; position: relative;
+}
+.img img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .4s; }
+.img img.loaded { opacity: 1; }
+.img .fallback { position: absolute; font-size: 3.5rem; }
+.img.loading::after {
+  content: ""; position: absolute; width: 28px; height: 28px; border-radius: 50%;
+  border: 3px solid #ffffff44; border-top-color: var(--gold); animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.slots, .pool { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 16px; }
+.pool { max-width: 380px; margin-inline: auto; }
+.tile {
+  width: 42px; height: 46px; border-radius: 8px; border: 0; font-size: 1.3rem; font-weight: 700;
+  background: var(--text); color: var(--bg); cursor: pointer; box-shadow: 0 2px 0 #0004;
+}
+.tile:active { transform: translateY(2px); }
+.tile.used { visibility: hidden; }
+.slot { background: var(--card); color: var(--text); border: 2px dashed #ffffff55; }
+.slot.filled { border-style: solid; border-color: var(--gold); }
+.slot.hinted { background: var(--gold); color: var(--bg); cursor: default; }
+.slots.ok .slot { background: var(--ok); border-color: var(--ok); color: #fff; }
+.slots.bad { animation: shake .4s; }
+.slots.bad .slot { border-color: var(--bad); }
+@keyframes shake {
+  25% { transform: translateX(-8px); } 75% { transform: translateX(8px); }
+}
+
+.actions { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
+.btn {
+  background: var(--card); color: var(--text); border: 1px solid #ffffff33; padding: 10px 16px;
+  border-radius: 10px; font-size: 1rem; cursor: pointer;
+}
+.btn:hover { border-color: var(--gold); }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.btn.primary { background: var(--gold); color: var(--bg); font-weight: 700; border: 0; }
+.msg { text-align: center; min-height: 1.4em; color: var(--gold); }
+
+.overlay {
+  position: fixed; inset: 0; background: #000a; display: flex; align-items: center; justify-content: center; padding: 16px;
+}
+.overlay[hidden] { display: none; }
+.modal { background: var(--card); padding: 24px; border-radius: 16px; text-align: center; max-width: 340px; width: 100%; }
+.modal h2 { margin-top: 0; color: var(--gold); }
+.ov-word { font-size: 1.8rem; font-weight: 800; letter-spacing: 3px; margin: 8px 0; }
+
+.foot {
+  width: 100%; max-width: 480px; margin-top: 12px; padding: 18px 16px 22px; text-align: center;
+  border-top: 1px solid #ffffff1f;
+}
+
+@media (max-width: 380px) { .tile { width: 36px; height: 42px; font-size: 1.1rem; } }
+
+/* ---- Menú de modos ---- */
+.mode { text-align: center; margin: 8px 0 0; font-size: .85rem; color: var(--gold); }
+.modal.menu { max-height: 90vh; overflow-y: auto; max-width: 420px; text-align: left; }
+.modal.menu h2 { text-align: center; }
+.btn.wide { width: 100%; }
+.or { text-align: center; opacity: .7; margin: 14px 0 6px; }
+.testament { font-size: .8rem; opacity: .7; margin: 10px 0 4px; text-transform: uppercase; letter-spacing: 1px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  background: var(--bg); color: var(--text); border: 1px solid #ffffff33; border-radius: 16px;
+  padding: 5px 11px; font-size: .85rem; cursor: pointer;
+}
+.chip small { opacity: .6; }
+.chip.on { background: var(--gold); color: var(--bg); border-color: var(--gold); font-weight: 700; }
+.books-info { text-align: center; font-size: .85rem; min-height: 1.3em; margin: 12px 0 8px; }
+.modal.menu #mode-books { margin-top: 4px; }
+
+/* ---- Dificultad ---- */
+.chips.diff { margin-bottom: 4px; }
+.chips.diff .chip { flex: 1; text-align: center; padding: 8px 6px; font-size: .95rem; }
+.diff-info { font-size: .8rem; opacity: .75; margin: 6px 0 12px; }
+
+/* ---- Exportar a PowerPoint ---- */
+.ppt-box { margin-top: 8px; border-top: 1px solid #ffffff22; padding-top: 4px; }
+.ppt-box .btn { margin-top: 8px; }
+.ppt-row { display: flex; gap: 10px; }
+.ppt-row label { flex: 1; font-size: .8rem; opacity: .85; display: flex; flex-direction: column; gap: 4px; }
+.ppt-row select {
+  background: var(--bg); color: var(--text); border: 1px solid #ffffff33; border-radius: 8px; padding: 7px; font-size: .95rem;
+}
+
+.btn.danger { margin-top: 16px; border-color: #ef5b5b88; color: #ffb4b4; }
+.btn.danger:hover { border-color: var(--bad); }
+.modal.menu #menu-back { margin-bottom: 12px; }
+
+/* ---- Pie de página ---- */
+.foot p { margin: 0; }
+.foot .made { font-size: .95rem; line-height: 1.5; color: var(--text); }
+.foot .made .em { display: inline-block; }
+.foot .heart { animation: beat 1.6s ease-in-out infinite; }
+@keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+@media (prefers-reduced-motion: reduce) { .foot .heart { animation: none; } }
+
+/* Se fijan :link y :visited para que el enlace nunca tome el morado por defecto del navegador. */
+.foot a.gh, .foot a.gh:link, .foot a.gh:visited {
+  display: inline-flex; align-items: center; gap: 8px; margin: 12px 0 14px; padding: 8px 16px;
+  border: 1px solid var(--gold); border-radius: 999px; color: var(--gold);
+  font-size: .9rem; font-weight: 600; text-decoration: none; transition: background .2s, color .2s;
+}
+.foot a.gh:hover, .foot a.gh:focus-visible { background: var(--gold); color: var(--bg); }
+.foot a.gh svg { width: 18px; height: 18px; fill: currentColor; }
+.foot .credit { font-size: .75rem; color: var(--text); opacity: .6; }

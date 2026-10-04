@@ -1,0 +1,10 @@
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Archivos generados por pruebas
+*.pptx
+*.log
+node_modules/

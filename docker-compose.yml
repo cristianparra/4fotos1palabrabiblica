@@ -1,0 +1,7 @@
+services:
+  cuatro-palabras:
+    build: .
+    container_name: cuatro-palabras-biblicas
+    restart: unless-stopped
+    ports:
+      - "8080:80"   # Usará siempre el puerto 8080 en tu servidor
