@@ -58,4 +58,6 @@ El código está bajo licencia [MIT](LICENSE): puedes hacer un fork, modificarlo
 
 Imágenes de Wikipedia / Wikimedia Commons, cada una con su propia licencia. La librería PptxGenJS incluida en `site/vendor/` tiene su propia licencia MIT.
 
+Créditos a mi Dios y también a mi bella y amada esposa Nicole Vergara.
+
 Hecho con ❤️ en Cristo ✝️, un montón de líneas de código y un poquito de café ☕
