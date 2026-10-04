@@ -2,7 +2,7 @@
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
     "namespace": "android_app",
-    "package_name": "com.parravergara.cuatrofotosunapalabrabiblica",
+    "package_name": "com.parravergara.palabrasbiblicas",
     "sha256_cert_fingerprints": ["1B:47:D0:4F:53:23:4E:E8:FE:72:92:65:3D:29:79:99:AF:CF:27:FE:60:92:E1:F4:DC:D6:CB:B2:03:34:37:B5"]
   }
 }]
