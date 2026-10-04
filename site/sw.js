@@ -1,13 +1,13 @@
 // Service worker: la interfaz funciona sin conexión y las imágenes/consultas ya vistas se guardan.
 // Al publicar cambios en el sitio, sube el número de VERSION para que se renueve la caché.
-const VERSION = "v1";
+const VERSION = "v2";
 const APP = `4fotos-app-${VERSION}`;
 const IMGS = `4fotos-img-${VERSION}`;
 const MAX_IMGS = 150;
 
 const SHELL = [
   "/", "/index.html", "/privacidad.html", "/manifest.webmanifest",
-  "/style.css?v=3", "/ppt.js?v=3", "/puzzles.js?v=3", "/game.js?v=3", "/vendor/pptxgen.bundle.js?v=3",
+  "/style.css?v=4", "/ppt.js?v=4", "/puzzles.js?v=4", "/game.js?v=4", "/vendor/pptxgen.bundle.js?v=4",
   "/icons/icon-192.png", "/icons/icon-512.png",
 ];
 

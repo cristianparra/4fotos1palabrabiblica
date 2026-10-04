@@ -134,3 +134,8 @@ h1 { font-size: 1.1rem; margin: 0; color: var(--gold); text-align: center; }
 .foot .credit { font-size: .75rem; color: var(--text); opacity: .6; }
 
 .foot .credit a, .foot .credit a:link, .foot .credit a:visited { color: var(--gold); }
+
+/* En la app instalada (PWA / app de Android) no se ofrece exportar a PowerPoint; en la web sí. */
+@media (display-mode: standalone), (display-mode: fullscreen), (display-mode: minimal-ui) {
+  .ppt-box { display: none; }
+}
